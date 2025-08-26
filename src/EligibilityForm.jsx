@@ -241,7 +241,11 @@ if (submitted) {
         type="email"
         value={formData.email}
         onChange={(e) => setFormData((p) => ({ ...p, email: e.target.value }))}
-        className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indra-lilac placeholder-indra-grey"
+        className="   w-full p-3 rounded-lg border border-gray-300
+    bg-transparent text-indra-light placeholder:text-indra-grey
+    focus:outline-none focus:ring-2 focus:ring-indra-lilac focus:border-transparent
+    not-[:placeholder-shown]:bg-indra-grey/10
+    transition-colors"
         placeholder="you@example.com"
       />
       {!formData.email ? null : (

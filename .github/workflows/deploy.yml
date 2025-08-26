@@ -2,7 +2,7 @@ name: Deploy Vite to GitHub Pages
 
 on:
   push:
-    branches: [ main ]   # change if your default branch is different
+    branches: [ main ]
   workflow_dispatch:
 
 permissions:
@@ -21,21 +21,35 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      - name: Setup Node (use public npm registry)
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
+          registry-url: 'https://registry.npmjs.org'
 
-      - name: Ensure public npm registry
-        run: npm config set registry https://registry.npmjs.org/
+      # Defensive: remove any repo-level .npmrc that could override the registry
+      - name: Remove repo .npmrc if present
+        run: rm -f .npmrc
 
-      - name: Install dependencies
-        run: npm install
+      # Extra safety: force public registry + sane retry config
+      - name: Configure npm
+        run: |
+          npm config set registry https://registry.npmjs.org/
+          npm config set fetch-retries 5
+          npm config set fetch-retry-factor 2
+          npm config set fetch-retry-maxtimeout 120000
+          npm config set fetch-timeout 120000
+          npm config set always-auth false
+
+      # Try a clean, then fallback to install (some lockfiles cause issues)
+      - name: Install dependencies (with fallback)
+        run: |
+          npm ci || npm install
 
       - name: Build
         run: npm run build
 
+      # SPA fallback so refresh on deep routes works on Pages
       - name: SPA fallback (copy index.html to 404.html)
         run: cp dist/index.html dist/404.html
 

@@ -1,0 +1,17 @@
+@import "tailwindcss";
+@import "@fontsource/poppins"; 
+@import "@fontsource/poppins/700.css"; 
+
+
+@theme {
+  --color-indra-lime: #a8ff55;
+  --color-indra-lilac: #a274bc;
+  --color-indra-purple: #2b1b38;
+  --color-indra-blue: #8fccd9;
+  --color-indra-dark: #131114;
+  --color-indra-light: #f7fbfc;
+  --color-indra-mushroom: #3d343a;
+  --color-indra-grey: #b2afb8;
+
+  --font-poppins: "Poppins", sans-serif;
+}

@@ -442,8 +442,8 @@ if (submitted) {
 
       {/* Right: Background Image */}
       <div
-        className="hidden md:block bg-cover bg-top min-h-screen"
-        style={{ backgroundImage: `url(${import.meta.env.BASE_URL}Team.jpg)` }}
+          className="hidden md:block bg-cover bg-top min-h-screen w-full"
+  style={{ backgroundImage: `url(${import.meta.env.BASE_URL}Team.jpg)` }}
       /></div>
   );
 };

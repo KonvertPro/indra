@@ -27,11 +27,17 @@ jobs:
           node-version: 20
           cache: npm
 
+      - name: Ensure public npm registry
+        run: npm config set registry https://registry.npmjs.org/
+
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       - name: Build
         run: npm run build
+
+      - name: SPA fallback (copy index.html to 404.html)
+        run: cp dist/index.html dist/404.html
 
       - name: Upload build artifact
         uses: actions/upload-pages-artifact@v3

@@ -333,7 +333,7 @@ return (
                     Have you been offered at least 2 different consultations/treatments for your condition?   
                   </h2>
                  <h3 className="text2xl font semibold mb-6 text-indra-light opacity 75">
-                  If you have only had 1 consultation/treatment, please continue with 'Yes'. However you may not be eligible for treatment but a consultation with us is still recommended.
+                  If you have only had 1 consultation/treatment, please continue with 'Yes'. However, you may not be eligible for CBMP treatment but a consultation with us is still recommended.
                   </h3>
                   <div className="flex flex-col sm:flex-row gap-4">
                     <button

@@ -330,8 +330,11 @@ return (
               {step === 2 && (
                 <>
                   <h2 className="text-2xl font-semibold mb-6 text-indra-light">
-                    Have you been offered at least 2 different treatments for your condition?
+                    Have you been offered at least 2 different consultations/treatments for your condition?   
                   </h2>
+                 <h3 className="text2xl font semibold mb-6 text-indra-light opacity 75">
+                  If you have only had 1 consultation/treatment, please continue with 'Yes'. However you may not be eligible for treatment but a consultation with us is still recommended.
+                  </h3>
                   <div className="flex flex-col sm:flex-row gap-4">
                     <button
                       className="bg-indra-lilac text-white px-6 py-3 rounded-lg"

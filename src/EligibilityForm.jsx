@@ -68,17 +68,17 @@ const EligibilityForm = () => {
   // ✅ Submitted Screen
   if (submitted) {
     return (
-      <div className="min-h-screen bg-indra-purple flex items-center justify-center p-4">
+      <div className="min-h-screen bg-indra-grey flex items-center justify-center p-4">
         <AnimatePresence mode="wait">
           <motion.div
             key="submitted"
             initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1, transition: { duration: 0.25 } }}
             exit={{ opacity: 0, scale: 0.98, transition: { duration: 0.2 } }}
-            className="bg-indra-dark shadow-md rounded-xl p-8 max-w-xl w-full text-center text-indra-light"
+            className="bg-indra-grey rounded-xl p-8 max-w-xl w-full text-center text-indra-light"
           >
-            <h2 className="text-2xl font-bold mb-4 text-indra-lime">Thank you!</h2>
-            <p className="mb-6">We’ve received your information and will follow up shortly.</p>
+            <h2 className="text-2xl font-semibold mb-4 text-indra-purple">Thank you!</h2>
+            <p className="mb-6 text-indra-light-grey ">We’ve received your information and will follow up shortly.</p>
 
             <div className="flex flex-col gap-4">
               <a
@@ -92,7 +92,7 @@ const EligibilityForm = () => {
 
               <a
                 href="https://indra.clinic/"
-                className="bg-transparent border border-indra-lime text-indra-lime px-6 py-3 rounded-lg font-semibold hover:bg-indra-lime hover:text-indra-dark transition"
+                className="bg-indra-button-grey border border-indra-button-grey text-indra-purple px-6 py-3 rounded-lg font-semibold hover:bg-indra-light-grey hover:text-indra-grey transition"
               >
                 Back to Indra Clinic
               </a>
